@@ -111,6 +111,9 @@ main{
     font-weight:100;
  
 }
+.grid-container > .grid-items .personal-details .personal-info h3{
+    font-weight: 600;
+}
 .grid-container > .grid-items .personal-details .personal-info h4{
     opacity: 40%;
 }
@@ -119,7 +122,7 @@ main{
     font-size: 1.7em;
     font-family: 'Barlow';
     margin: .7em 0;
-    font-weight: bolder;
+    font-weight: 500;
     
 }
 .grid-container > .grid-items > .job-offer p:nth-of-type(2){
