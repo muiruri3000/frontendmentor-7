@@ -1,0 +1,184 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+--Moderate-violet: hsl(263, 55%, 52%);
+--Very-dark-grayish-blue: hsl(217, 19%, 35%);
+--Very-dark-blackish-blue: hsl(219, 29%, 14%);
+--White: hsl(0, 0%, 100%);
+
+
+
+--Light-gray: hsl(0, 0%, 81%);
+--Light-grayish-blue: hsl(210, 46%, 95%)
+
+}
+
+@font-face {
+    font-family: 'Barlow';
+    src: url(/assets/fonts/BarlowSemiCondensed-Regular.woff2);
+}
+html{
+    font-size: 0.8125;
+    font-family: 'Barlow',sans-serif;
+}
+body{
+    padding: .9em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main{
+
+    max-width: 69.375em;
+    max-height: 35.75em;
+      
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* 4 equal columns */
+    grid-template-rows: repeat(2, 1fr);     /* 2 equal rows */
+    grid-template-areas: 
+        "one one two five"
+        "four three three five";
+    gap: 1.3em;
+}
+.grid-container > .grid-item1, .grid-item2, .grid-item4{
+    color: white;
+}
+
+/* Correctly assign grid areas without overriding grid column or row */
+.grid-container > .grid-item1 {
+    grid-area: one;
+    background-color: var(--Moderate-violet);
+    position: relative;
+}
+
+
+.grid-container > .grid-item1 >.svg-image img{
+    font-size: 20px;
+    color: white;
+    font-size: 5rem;
+    position: absolute;
+    width: 1em;
+    top: 10px;
+    right: 30px;
+    opacity: 0.3;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.grid-container > .grid-item2 {
+    grid-area: two;
+    background-color: var(--Very-dark-grayish-blue);
+}
+
+.grid-container > .grid-item3 {
+    grid-area: four;
+    
+    background-color: var(--White);
+}
+
+.grid-container > .grid-item4 {
+    grid-area: three;
+    background-color: var(--Very-dark-blackish-blue);
+}
+
+.grid-container > .grid-item5 {
+    grid-area: five;
+    background-color: var(--White);
+    font-size:10rem;
+}
+
+.grid-container > .grid-items{
+    padding: .3em .9em;
+    font-size: .7rem;
+    box-shadow: .5em .5em .5em .5em rgba(0,0,0,0.4);
+    border-radius: .5em;
+    line-height: 1.5;
+
+}
+
+.grid-container > .grid-items .personal-details {
+    display: flex;
+    align-items: center;
+    font-weight:100;
+ 
+}
+.grid-container > .grid-items .personal-details .personal-info h4{
+    opacity: 40%;
+}
+
+.grid-container > .grid-items > .job-offer p:nth-of-type(1){
+    font-size: 1.7em;
+    font-family: 'Barlow';
+    margin: .7em 0;
+    font-weight: bolder;
+    
+}
+.grid-container > .grid-items > .job-offer p:nth-of-type(2){
+    opacity: 70%;
+}
+.grid-container > .grid-items > .personal-details  {
+  margin-bottom: 1em;
+    
+}
+.grid-container > .grid-items > .personal-details > .image{
+    margin-right:1em;
+   
+}
+.grid-container > .grid-items > .personal-details  img{
+    width: 1.9em;
+    border-radius: 50%;
+}
+
+.attribution{
+    margin-top: 3em;
+}
+/* @media screen and (max-width:855px) {
+    .grid-container{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto;
+        gap:.7em;
+    }
+
+
+*/    
+@media screen and (max-width: 600px) {
+   main > .grid-container {
+        grid-template-columns:repeat(1,1fr);
+        grid-template-areas:
+            " one "
+            " two "
+            " three "
+            " four "
+            " five ";
+        gap: 1.3em;
+        width: 100%;
+    }
+
+    .grid-items {
+        width: 100%;
+    }
+
+}
+@media screen and (max-width: 874px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "one two"
+            "three four"
+            "five five";
+        gap: 1.3em;
+        width: 100%;
+    }
+    .grid-items {
+        width: 100%;
+    }
+}
